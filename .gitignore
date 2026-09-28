@@ -1,0 +1,17 @@
+# Publish only the portfolio runtime and project attachments.
+/docs/
+/submission/
+/tools/
+*.zip
+*.tmp
+*.log
+실행방법.txt
+개인정보.txt
+.env
+.env.*
+.DS_Store
+Thumbs.db
+/files/
+*.pdf
+/assets/report.css
+/assets/images/dandi-slide-*.png
