@@ -566,25 +566,25 @@ details[open]>summary .disclosure-sign:after {
   margin-top:28px;
   padding-top:24px
 }
-.development-case p {
-  line-height:1.65
+.development-steps {
+  max-width:64ch;
+  font-size:15px;
+  line-height:1.65;
+  word-break:keep-all
 }
-.field-note-body .note-evidence {
-  display:flex;
-  flex-wrap:wrap;
-  gap:4px 24px;
-  margin-top:12px;
-  font-size:14px
+.development-steps>div {
+  display:grid;
+  grid-template-columns:38px minmax(0,1fr);
+  gap:12px
 }
-.note-evidence a {
-  display:inline-flex;
-  align-items:center;
-  min-height:44px;
-  text-decoration:underline;
-  text-decoration-thickness:1px
+.development-steps>div+div {
+  margin-top:14px
 }
-.note-evidence a:hover {
-  text-decoration-thickness:2px
+.development-steps dt {
+  font-weight:600
+}
+.development-steps dd {
+  margin:0
 }
 .supporting-note {
   margin-top:0;
