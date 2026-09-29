@@ -11,7 +11,7 @@
 
 ## 글꼴과 라이브러리
 
-- Noto Sans KR: https://github.com/google/fonts/tree/main/ofl/notosanskr · SIL OFL 1.1 · `fonts/notosanskr-OFL.txt`.
+- `fonts/SUIT-Variable.woff2`: 한글 제목·본문용 SUIT 2 가변 웹폰트. [공식 배포](https://github.com/sun-typeface/SUIT), 원본 커밋 `55118d981336d8fce005eb62888c12c0568ef7b0`. 수정하지 않은 WOFF2를 로컬에 포함. SIL OFL 1.1, `fonts/suit-OFL.txt`.
 - Noto Serif KR: https://github.com/google/fonts/tree/main/ofl/notoserifkr · SIL OFL 1.1 · `fonts/notoserifkr-OFL.txt`. 가변 WOFF2를 문자 범위별로 분할했으며 원본의 문자와 굵기 범위를 유지했습니다.
 - GSAP 3.13.0 / ScrollTrigger: https://gsap.com/ · `vendor/GSAP-LICENSE.txt`.
 - favicon.svg: 포트폴리오용 표식.
@@ -27,3 +27,7 @@
 - 협업 과정은 API·데이터 경계와 기능 통합 기록에 근거합니다. 기록에 없는 회의, 갈등, 제안 주도권이나 개선 수치는 추가하지 않았습니다.
 
 개발 노트는 사용자 요청에 따라 짧은 제목과 문제·해결 두 항목으로 정리했습니다. 노트 본문의 PR·커밋·테스트 링크와 별도 검증 설명은 제거했으며, 내용 근거는 이 출처 기록과 로컬 작업 문서에 보관합니다.
+
+## 한글 타이포그래피 조정
+
+한글 제목·본문은 SUIT로 통일하고 영문 큰 제목과 번호에는 Noto Serif KR을 사용합니다. 큰 한글 제목은 600 굵기와 -0.025em 자간, 소개·작품 설명은 1.6 행간으로 조정했습니다. SUIT 원본 폰트와 라이선스를 함께 포함해 외부 폰트 서버 없이 표시합니다.
