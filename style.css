@@ -534,6 +534,12 @@ a:hover .link-label,a:focus-visible .link-label {
   font-weight:400;
   flex-shrink:0
 }
+.field-note summary>.note-label:first-child {
+  width:auto;
+  font-size:inherit;
+  color:inherit;
+  font-weight:inherit
+}
 .disclosure-sign {
   position:relative;
   width:16px;
