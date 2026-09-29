@@ -25,8 +25,9 @@
   --rail:64px;
   --gutter:clamp(28px,5vw,80px);
   --max:1280px;
-  --section-columns:256px minmax(0,1fr);
-  --section-gap:48px
+  --profile-columns:minmax(0,1.15fr) minmax(0,1.5fr);
+  --profile-column-gap:80px;
+  --profile-content-column:2
 }
 * {
   box-sizing:border-box
@@ -355,8 +356,8 @@ a:hover .link-label,a:focus-visible .link-label {
 }
 .case-study {
   display:grid;
-  grid-template-columns:var(--section-columns);
-  column-gap:var(--section-gap);
+  grid-template-columns:208px minmax(0,1fr);
+  column-gap:64px;
   padding-top:72px;
   scroll-margin-top:40px
 }
@@ -565,7 +566,7 @@ details[open]>summary .disclosure-sign:after {
   transform:none
 }
 .field-note-body {
-  padding:0 0 24px
+  padding:0 0 24px 63px
 }
 .field-note-body p+p {
   margin-top:16px
@@ -645,19 +646,25 @@ details[open]>summary .disclosure-sign:after {
 .work-endnote {
   font-size:12px;
   color:var(--muted);
-  padding-top:20px;
+  padding-top:24px;
   border-top:1px solid var(--line);
-  margin-top:48px
+  margin-top:64px
 }
 .about-section {
-  padding-top:72px;
+  padding-top:120px;
   padding-bottom:104px
 }
-.about-layout {
+.about-layout,.skills-section,.contact-inner {
   display:grid;
-  grid-template-columns:var(--section-columns);
-  gap:var(--section-gap);
-  align-items:start;
+  grid-template-columns:var(--profile-columns);
+  gap:32px var(--profile-column-gap);
+  align-items:start
+}
+.about-layout>*,.skills-section>*,.contact-inner>* {
+  grid-column:var(--profile-content-column);
+  min-width:0
+}
+.about-layout {
   border-top:1px solid var(--line);
   padding-top:40px
 }
@@ -702,10 +709,6 @@ details[open]>summary .disclosure-sign:after {
   margin:0
 }
 .skills-section {
-  display:grid;
-  grid-template-columns:var(--section-columns);
-  gap:var(--section-gap);
-  align-items:start;
   margin-top:64px;
   padding-top:32px;
   border-top:1px solid var(--line)
@@ -767,12 +770,6 @@ details[open]>summary .disclosure-sign:after {
   border-top:1px solid var(--emerald-border);
   border-bottom:1px solid var(--emerald-border);
   padding:80px 0 64px
-}
-.contact-inner {
-  display:grid;
-  grid-template-columns:var(--section-columns);
-  gap:var(--section-gap);
-  align-items:start
 }
 .contact-inner h2 {
   font-family:var(--serif);
@@ -951,8 +948,7 @@ details[open]>summary .disclosure-sign:after {
   :root {
     --rail:48px;
     --gutter:36px;
-    --section-columns:208px minmax(0,1fr);
-    --section-gap:32px
+    --profile-column-gap:48px
   }
   .cover-heading {
     grid-template-columns:1.4fr 1fr;
@@ -980,6 +976,10 @@ details[open]>summary .disclosure-sign:after {
     display:block;
     margin-top:5px
   }
+  .case-study {
+    grid-template-columns:170px minmax(0,1fr);
+    column-gap:40px
+  }
   .case-number {
     font-size:64px
   }
@@ -1004,8 +1004,8 @@ details[open]>summary .disclosure-sign:after {
   :root {
     --rail:0px;
     --gutter:28px;
-    --section-columns:minmax(0,1fr);
-    --section-gap:28px
+    --profile-columns:minmax(0,1fr);
+    --profile-content-column:1
   }
   .spine {
     display:none
@@ -1141,7 +1141,7 @@ details[open]>summary .disclosure-sign:after {
     padding-top:40px
   }
   .about-section {
-    padding:56px 0 72px
+    padding:88px 0 72px
   }
   .about-layout h2,.skills-heading h3 {
     font-size:34px
@@ -1383,7 +1383,7 @@ details[open]>summary .disclosure-sign:after {
     padding-top:20px
   }
   .about-section {
-    padding:48px 0 64px
+    padding:72px 0 64px
   }
   .about-layout {
     grid-template-columns:1fr;
