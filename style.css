@@ -26,8 +26,7 @@
   --gutter:clamp(28px,5vw,80px);
   --max:1280px;
   --content-columns:208px minmax(0,1fr);
-  --content-column-gap:64px;
-  --profile-content-column:2
+  --content-column-gap:64px
 }
 * {
   box-sizing:border-box
@@ -656,12 +655,12 @@ details[open]>summary .disclosure-sign:after {
 }
 .about-layout,.skills-section,.contact-inner {
   display:grid;
-  grid-template-columns:var(--content-columns);
-  gap:32px var(--content-column-gap);
+  grid-template-columns:minmax(0,1fr);
+  gap:32px;
   align-items:start
 }
 .about-layout>*,.skills-section>*,.contact-inner>* {
-  grid-column:var(--profile-content-column);
+  grid-column:1;
   min-width:0;
   width:100%;
   max-width:720px
@@ -1003,8 +1002,7 @@ details[open]>summary .disclosure-sign:after {
   :root {
     --rail:0px;
     --gutter:28px;
-    --content-columns:minmax(0,1fr);
-    --profile-content-column:1
+    --content-columns:minmax(0,1fr)
   }
   .spine {
     display:none
