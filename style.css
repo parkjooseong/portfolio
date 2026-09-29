@@ -24,7 +24,9 @@
   --serif:"Noto Serif KR",serif;
   --rail:64px;
   --gutter:clamp(28px,5vw,80px);
-  --max:1280px
+  --max:1280px;
+  --section-columns:256px minmax(0,1fr);
+  --section-gap:48px
 }
 * {
   box-sizing:border-box
@@ -353,8 +355,8 @@ a:hover .link-label,a:focus-visible .link-label {
 }
 .case-study {
   display:grid;
-  grid-template-columns:208px minmax(0,1fr);
-  column-gap:64px;
+  grid-template-columns:var(--section-columns);
+  column-gap:var(--section-gap);
   padding-top:72px;
   scroll-margin-top:40px
 }
@@ -563,7 +565,7 @@ details[open]>summary .disclosure-sign:after {
   transform:none
 }
 .field-note-body {
-  padding:0 0 24px 63px
+  padding:0 0 24px
 }
 .field-note-body p+p {
   margin-top:16px
@@ -643,25 +645,26 @@ details[open]>summary .disclosure-sign:after {
 .work-endnote {
   font-size:12px;
   color:var(--muted);
-  padding-top:24px;
+  padding-top:20px;
   border-top:1px solid var(--line);
-  margin-top:64px
+  margin-top:48px
 }
 .about-section {
-  padding-top:120px;
+  padding-top:72px;
   padding-bottom:104px
 }
 .about-layout {
   display:grid;
-  grid-template-columns:1.15fr 1.5fr;
-  gap:80px;
+  grid-template-columns:var(--section-columns);
+  gap:var(--section-gap);
+  align-items:start;
   border-top:1px solid var(--line);
   padding-top:40px
 }
 .about-layout h2,.skills-heading h3 {
   font-family:var(--serif);
   font-size:clamp(32px,3.3vw,48px);
-  line-height:1.4;
+  line-height:1;
   letter-spacing:-.025em;
   font-weight:450
 }
@@ -700,8 +703,9 @@ details[open]>summary .disclosure-sign:after {
 }
 .skills-section {
   display:grid;
-  grid-template-columns:1.15fr 1.5fr;
-  gap:80px;
+  grid-template-columns:var(--section-columns);
+  gap:var(--section-gap);
+  align-items:start;
   margin-top:64px;
   padding-top:32px;
   border-top:1px solid var(--line)
@@ -719,7 +723,7 @@ details[open]>summary .disclosure-sign:after {
   font-weight:550;
   color:var(--ink)
 }
-.skills-content {
+.about-text,.skills-content {
   min-width:0
 }
 .skills-intro {
@@ -766,15 +770,15 @@ details[open]>summary .disclosure-sign:after {
 }
 .contact-inner {
   display:grid;
-  grid-template-columns:1.2fr 1fr;
-  gap:64px;
+  grid-template-columns:var(--section-columns);
+  gap:var(--section-gap);
   align-items:start
 }
 .contact-inner h2 {
   font-family:var(--serif);
   font-size:clamp(32px,3.3vw,48px);
   font-weight:450;
-  line-height:1.32;
+  line-height:1;
   letter-spacing:-.025em
 }
 .contact-note>p:first-child {
@@ -946,7 +950,9 @@ details[open]>summary .disclosure-sign:after {
 @media(max-width:1150px) {
   :root {
     --rail:48px;
-    --gutter:36px
+    --gutter:36px;
+    --section-columns:208px minmax(0,1fr);
+    --section-gap:32px
   }
   .cover-heading {
     grid-template-columns:1.4fr 1fr;
@@ -974,10 +980,6 @@ details[open]>summary .disclosure-sign:after {
     display:block;
     margin-top:5px
   }
-  .case-study {
-    grid-template-columns:170px minmax(0,1fr);
-    column-gap:40px
-  }
   .case-number {
     font-size:64px
   }
@@ -997,17 +999,13 @@ details[open]>summary .disclosure-sign:after {
   .field-note-body,.slide-gallery {
     padding-left:0
   }
-  .about-layout,.skills-section {
-    gap:48px
-  }
-  .contact-inner {
-    gap:40px
-  }
 }
 @media(max-width:850px) {
   :root {
     --rail:0px;
-    --gutter:28px
+    --gutter:28px;
+    --section-columns:minmax(0,1fr);
+    --section-gap:28px
   }
   .spine {
     display:none
@@ -1143,11 +1141,7 @@ details[open]>summary .disclosure-sign:after {
     padding-top:40px
   }
   .about-section {
-    padding:88px 0 72px
-  }
-  .about-layout,.skills-section {
-    gap:40px;
-    grid-template-columns:1fr 1.4fr
+    padding:56px 0 72px
   }
   .about-layout h2,.skills-heading h3 {
     font-size:34px
@@ -1164,10 +1158,6 @@ details[open]>summary .disclosure-sign:after {
   }
   .contact-section {
     padding:64px 0 48px
-  }
-  .contact-inner {
-    grid-template-columns:1.1fr 1fr;
-    gap:32px
   }
   .contact-inner h2 {
     font-size:34px
@@ -1393,7 +1383,7 @@ details[open]>summary .disclosure-sign:after {
     padding-top:20px
   }
   .about-section {
-    padding:72px 0 64px
+    padding:48px 0 64px
   }
   .about-layout {
     grid-template-columns:1fr;
