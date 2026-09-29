@@ -25,8 +25,8 @@
   --rail:64px;
   --gutter:clamp(28px,5vw,80px);
   --max:1280px;
-  --profile-columns:minmax(0,1.15fr) minmax(0,1.5fr);
-  --profile-column-gap:80px;
+  --content-columns:208px minmax(0,1fr);
+  --content-column-gap:64px;
   --profile-content-column:2
 }
 * {
@@ -356,8 +356,8 @@ a:hover .link-label,a:focus-visible .link-label {
 }
 .case-study {
   display:grid;
-  grid-template-columns:208px minmax(0,1fr);
-  column-gap:64px;
+  grid-template-columns:var(--content-columns);
+  column-gap:var(--content-column-gap);
   padding-top:72px;
   scroll-margin-top:40px
 }
@@ -656,13 +656,15 @@ details[open]>summary .disclosure-sign:after {
 }
 .about-layout,.skills-section,.contact-inner {
   display:grid;
-  grid-template-columns:var(--profile-columns);
-  gap:32px var(--profile-column-gap);
+  grid-template-columns:var(--content-columns);
+  gap:32px var(--content-column-gap);
   align-items:start
 }
 .about-layout>*,.skills-section>*,.contact-inner>* {
   grid-column:var(--profile-content-column);
-  min-width:0
+  min-width:0;
+  width:100%;
+  max-width:720px
 }
 .about-layout {
   border-top:1px solid var(--line);
@@ -948,7 +950,8 @@ details[open]>summary .disclosure-sign:after {
   :root {
     --rail:48px;
     --gutter:36px;
-    --profile-column-gap:48px
+    --content-columns:170px minmax(0,1fr);
+    --content-column-gap:40px
   }
   .cover-heading {
     grid-template-columns:1.4fr 1fr;
@@ -976,10 +979,6 @@ details[open]>summary .disclosure-sign:after {
     display:block;
     margin-top:5px
   }
-  .case-study {
-    grid-template-columns:170px minmax(0,1fr);
-    column-gap:40px
-  }
   .case-number {
     font-size:64px
   }
@@ -1004,7 +1003,7 @@ details[open]>summary .disclosure-sign:after {
   :root {
     --rail:0px;
     --gutter:28px;
-    --profile-columns:minmax(0,1fr);
+    --content-columns:minmax(0,1fr);
     --profile-content-column:1
   }
   .spine {
